@@ -70,6 +70,7 @@ section, but for now this message can be considered a success.
 - You can SSH into your virtual machine by running `vagrant ssh`; you will see a
 message similar to `Welcome to your Vagrant-built virtual machine` and you'll be
 dropped to the VM's command prompt.
+- You can exit the VM by simply typing `exit` at the prompt.
 
 # Collecting Data
 > Bonus question: In your own words, what is the Agent?
@@ -142,10 +143,11 @@ To take advantage of this provisioner and install the Datadog agent when you run
   [`.gitignore`](.gitignore).
 - Replace the `$YOUR_API_KEY_GOES_HERE` value in the newly created
 `secrets.yaml` with the real one from Datadog.
-- If you still have your vagrant box running you can do `vagrant provision` and
-you should see the provisioner run and install the agent. You can now go to
-your [Infrastructure Host Map](https://app.datadoghq.com/infrastructure/map) to
-see the agent reporting from the VM.
+- If you still have your vagrant box running you can do `vagrant provision` from
+your workstation (outside the VM) and you should see the provisioner run and
+install the agent. You can now go to your [Infrastructure Host
+Map](https://app.datadoghq.com/infrastructure/map) to see the agent reporting
+from the VM.
 - A successful `vagrant up` or `vagrant provision` will now end with:
   ```
   ==> default:    /etc/rc4.d/S20datadog-agent -> ../init.d/datadog-agent
@@ -167,7 +169,7 @@ assigned via the UI, the API, the agent configuration, or inherited from an
 integration.
 
 For this project the tags are modified in the agent configuration with the
-values defined in []`tags.yaml`](tags.yaml). This is automated through the
+values defined in [`tags.yaml`](tags.yaml). This is automated through the
 [`Vagrantfile`](Vagrantfile) provisioner. You can modify the tags in
 [`tags.yaml`](tags.yaml) then run `vagrant provision` and it will alter the tags
 in the agent config. It will take a few minutes to update in the
