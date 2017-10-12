@@ -294,10 +294,11 @@ reporting:
 
 # Visualizing Data
 Visualizing data is really important for humans. Humans are experts at pattern
-and anomaly recognition, but patterns and anomalies a hard to see when presented
-purely as plain text. Visualizing data also makes it easier for someone to
-perform a quick analysis over months and years of data in a very short amount
-of time, where-as with non-visual data it would be a very lengthy task.
+and anomaly recognition, but patterns and anomalies are hard to see when 
+presented purely as plain text. Visualizing data also makes it easier for
+someone to perform a quick analysis over months and years of data in a very
+short amount of time, where-as with non-visual data it would be a very lengthy
+task.
 
 > Bonus question: What is the difference between a timeboard and a screenboard?
 
